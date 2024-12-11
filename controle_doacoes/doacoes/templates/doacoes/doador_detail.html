@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Doador</title>
+</head>
+<body>
+    <h1>Detalhes do Doador</h1>
+    <p><strong>Nome:</strong> {{ doador.nome }}</p>
+    <p><strong>Email:</strong> {{ doador.email }}</p>
+    <p><strong>Telefone:</strong> {{ doador.telefone }}</p>
+    <h2>Doações</h2>
+    <ul>
+        {% for doacao in doador.doacoes.all %}
+        <li>R$ {{ doacao.valor }} - {{ doacao.data }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'doador_list' %}">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Doadores</title>
+</head>
+<body>
+    <h1>Lista de Doadores</h1>
+    <a href="{% url 'doador_create' %}">Adicionar Novo Doador</a>
+    <ul>
+        {% for doador in doadores %}
+        <li>
+            <a href="{% url 'doador_detail' doador.id %}">{{ doador.nome }}</a> - 
+            <a href="{% url 'doador_update' doador.id %}">Editar</a> - 
+            <a href="{% url 'doador_delete' doador.id %}">Excluir</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Voltar para Início</a> - <a href="{% url 'doacao_list' %}">Lista de Doações</a>
+</body>
+</html>

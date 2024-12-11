@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Doação</title>
+</head>
+<body>
+    <h1>Detalhes da Doação</h1>
+    <p><strong>Valor:</strong> R$ {{ doacao.valor }}</p>
+    <p><strong>Data:</strong> {{ doacao.data }}</p>
+    <p><strong>Doador:</strong> {{ doacao.doador.nome }}</p>
+    <a href="{% url 'doacao_list' %}">Voltar</a>
+</body>
+</html>
